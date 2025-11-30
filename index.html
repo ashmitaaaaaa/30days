@@ -633,5 +633,21 @@
             <p><span class="emoji-large">💪</span> Stay Consistent <span class="emoji-large">🎯</span> Stay Focused <span class="emoji-large">🚀</span> You've Got This!</p>
         </div>
     </div>
+    <script>
+    // Save checkbox state on change
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        });
+
+        // Load saved state
+        const saved = localStorage.getItem(checkbox.id);
+        if (saved === "true") {
+            checkbox.checked = true;
+        }
+    });
+</script>
+
 </body>
+
 </html>
